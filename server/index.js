@@ -26,6 +26,7 @@ massive({
   ssl: { rejectUnauthorized: false },
 })
   .then((dbInstance) => {
+    console.log('Database Connected!');
     app.set('db', dbInstance);
     app.listen(SERVER_PORT, () => {
       console.log(`Connected to Server ${SERVER_PORT}`);
@@ -34,7 +35,7 @@ massive({
   .catch((err) => console.log(`Database Connection Error -> ${err}`));
 
 //Auth Endpoints
-// app.post('/api/auth/register', userCtrl.register);
+app.post('/api/auth/register', userCtrl.register);
 // app.post('/api/auth/login', userCtrl.login);
 // app.get('/api/auth/me', userCtrl.getUser);
 // app.post('/api/auth/logout', userCtrl.logout);
