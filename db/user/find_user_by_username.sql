@@ -1,0 +1,3 @@
+SELECT * FROM helo_user
+WHERE USER_NAME = ${USER_NAME};
+RETURNING *;
